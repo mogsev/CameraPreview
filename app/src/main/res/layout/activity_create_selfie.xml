@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.zhenya.camerapreview.MainActivity">
+
+    <!-- Section Menu -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_vertical_margin">
+
+        <ImageButton
+            android:id="@+id/ibFlash"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@mipmap/flash"
+            android:onClick="onFlash"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:id="@+id/ibName"
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/dzn_dzn" />
+
+        <ImageButton
+            android:id="@+id/ibSpread"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@mipmap/camera"
+            android:onClick="onCamera" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true">
+
+            <SurfaceView
+                android:id="@+id/surfaceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"></SurfaceView>
+
+        </FrameLayout>
+        <!--
+        <com.dzn.dzn.application.Widget.SquaredFrame
+            android:id="@+id/surfaceView"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignParentTop="true" /> -->
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignParentTop="true"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="160dp">
+
+            <ImageButton
+                android:id="@+id/ibStop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@mipmap/stop"
+                android:foregroundGravity="fill"
+                android:onClick="onStopAlarm"
+                android:scaleType="fitXY" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llSpreadSelfie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="32dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="35dp"
+                    android:background="@mipmap/spread_social_network" />
+
+                <TextView
+                    android:id="@+id/tvSelfieSpread"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+                    android:text="sdfgvsgsg d h hdf hdf hgdf hdfg h" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCreateSelfie"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="dsfgjhsvdkfjsv gsv dgs gv" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
